@@ -14,7 +14,7 @@ DOWNLOAD_DEP="${2:-${DOWNLOAD_DEP:-}}"
 function setup_prod() {
     echo "[INFO] Setting up PROD environment ..."
     export TRANSFORMER_HOST="${TRANSFORMER_HOST:-http://localhost}"
-    export REDIS_HOST="${REDIS_HOST:-localhost}"
+    export REDIS_HOST="${REDIS_HOST:-redis}"
     export REDIS_PORT="${REDIS_PORT:-6379}"
     export GC_ML_HOST="${GC_ML_HOST:-http://localhost}"
     export S3_TRANS_MODEL_PATH="${S3_TRANS_MODEL_PATH:-s3://advana-data-zone/bronze/gamechanger/models/transformers/v7/transformers.tar.gz}"
@@ -34,9 +34,9 @@ function setup_prod() {
     export ES_ENABLE_SSL="${ES_ENABLE_SSL:-true}"
     export ES_ENABLE_AUTH="${ES_ENABLE_AUTH:-true}"
   
-    export GC_WEB_HOST="${GC_WEB_HOST:-gamechanger.advana.data.mil}"
+    export GC_WEB_HOST="${GC_WEB_HOST:-gc-web}"
     export GC_WEB_PORT="${GC_WEB_PORT:-8990}"
-    export GC_WEB_USER="${GC_WEB_USER:-steve}"
+    export GC_WEB_USER="${GC_WEB_USER:-YOUR.NAME.007}"
     export GC_ENABLE_SSL="${GC_ENABLE_SSL:-true}"
     export ML_WEB_TOKEN="${ML_WEB_TOKEN:-}"
     export MEMORY_LOAD_LIMIT="${MEMORY_LOAD_LIMIT:-99}"
@@ -48,7 +48,7 @@ function setup_prod() {
 
 function setup_dev() {
     echo "[INFO] Setting up DEV Docker environment ..."
-    export REDIS_HOST="${REDIS_HOST:-gc-redis}"
+    export REDIS_HOST="${REDIS_HOST:-redis}"
     export REDIS_PORT="${REDIS_PORT:-6380}"
     export GC_ML_HOST="${GC_ML_HOST:-http://host.docker.internal}"
     export S3_TRANS_MODEL_PATH="${S3_TRANS_MODEL_PATH:-s3://advana-data-zone/bronze/gamechanger/models/transformers/v7/transformers.tar.gz}"
@@ -66,16 +66,16 @@ function setup_dev() {
     export DOWNLOAD_DEP="${DOWNLOAD_DEP:-false}"
     export MODEL_LOAD="${MODEL_LOAD:-True}"
 
-    export ES_HOST="${ES_HOST:-vpc-gamechanger-dev-es-ms4wkfqyvlyt3gmiyak2hleqyu.us-east-1.es.amazonaws.com}"
+    export ES_HOST="${ES_HOST:-elasticsearch}"
     export ES_PORT="${ES_PORT:-443}"
     export ES_USER="${ES_USER:-}"
     export ES_PASSWORD="${ES_PASSWORD:-}"
     export ES_ENABLE_SSL="${ES_ENABLE_SSL:-true}"
     export ES_ENABLE_AUTH="${ES_ENABLE_AUTH:-false}"
       
-    export GC_WEB_HOST="${GC_WEB_HOST:-10.194.9.88}"
+    export GC_WEB_HOST="${GC_WEB_HOST:-gc-web}"
     export GC_WEB_PORT="${GC_WEB_PORT:-8990}"
-    export GC_WEB_USER="${GC_WEB_USER:-steve}"
+    export GC_WEB_USER="${GC_WEB_USER:-YOUR.NAME.007}"
     export GC_ENABLE_SSL="${GC_ENABLE_SSL:-false}"
 
     export ML_WEB_TOKEN="${ML_WEB_TOKEN:-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwZXJtcyI6WyJHYW1lY2hhbmdlciBBZG1pbiJdLCJjbiI6IjAwNyIsImNzcmYtdG9rZW4iOiI0ZWE1YzUwOGE2NTY2ZTc2MjQwNTQzZjhmZWIwNmZkNDU3Nzc3YmUzOTU0OWM0MDE2NDM2YWZkYTY1ZDIzMzBlIiwiaWF0IjoxNjQ0MzQyMjI0fQ.ezxT-36a25IMFJPea3re7sUwYZfm8ivZvDVAv_zti1W6DRkM2Hs7WwFuy-gR092m-p7Z7ohb7yM2AKVbJAn4CMtI3_1j0_VzzYb6yhQj7YIPg-Cax5Em9JCrIlCEx7r26o-zV1me0mIYMATJTMInKikeBvg2RJErvLwkgZNQVT8gQyR-JxM4mhjmylcel9-kt5FpJJuUKnzPI8BqVeG_eL6ktevA9odJRx56w9n2LivUaoQUCiXreLOLmSEwkkhIFnsyMcCCwkPpx4lMrkzjIr3B08_gRk5wIv4pV01OcSYR4QkXM7ZsNZZzRf-JtPHYn9SlT9DvwRVbYniYUCA7IM0OegFKSTt_-i7qvuKuYFHGDStfkijX2T6g_49oY1qfLsKldisccoOLfsaROpB1NiE9DBeM5OzAo-R98H_UiUFjsFVNvlunETbhuqX2yZFUjKxxerS_-1_DW8BmoD25Ofl188KM8gqUXo5lJs4bPTf41_N_V-57muZxdAq8kBazDKhaudAzskFNFF1B9dxwgxeE8wd5Gh_beCuCoP3K-9GwRVFfrdOCO19FDjqpLr0k94UfZzuflP5SDGXth2-AzZIslurPDL_1F4iadxq06GJggwryMxC7_Uc4_FQST53-gl9SXEFVSNdr6gsw318JNiyz8bxbBpIj7posqQeEaDg}"
