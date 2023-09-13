@@ -77,6 +77,7 @@ class DocumentReader:
 
         self.model_name = model_name
         self.READER_PATH = os.path.join(transformer_path, model_name)
+        print(f"model_name = {model_name}, READER_PATH = {self.READER_PATH}")
         self.tokenizer = AutoTokenizer.from_pretrained(self.READER_PATH)
         self.model = AutoModelForQuestionAnswering.from_pretrained(self.READER_PATH)
         self.max_len = self.model.config.max_position_embeddings
