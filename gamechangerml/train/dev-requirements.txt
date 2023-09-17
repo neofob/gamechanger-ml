@@ -13,10 +13,10 @@ PyDispatcher==2.0.5
 PyHamcrest==2.0.2
 PyYAML==5.3.1
 Pygments==2.3.1
-SQLAlchemy==1.3.19
+SQLAlchemy==1.3.13
 Scrapy==2.1.0
 Twisted==20.3.0
-Werkzeug==1.0.1
+Werkzeug==0.16.1
 absl-py==0.9.0
 aniso8601==8.0.0
 astunparse==1.6.3
@@ -47,6 +47,7 @@ docutils==0.15.2
 elasticsearch==7.9.1
 eli5==0.10.1
 etelemetry==0.2.1
+faiss-cpu
 filelock==3.0.12
 fitz==0.0.1.dev2
 future==0.18.2
@@ -72,7 +73,7 @@ joblib==0.15.1
 jsonschema==3.2.0
 lxml==4.5.1
 murmurhash==1.0.2
-mlflow==1.11.0
+mlflow==1.0.0
 neobolt==1.7.17
 neotime==1.7.4
 networkx==2.4
@@ -125,6 +126,7 @@ spacy==2.2.4
 spicy==0.16.0
 srsly==1.0.2
 syntok==1.3.1
+swig
 tabulate==0.8.7
 tensorflow-estimator==2.2.0
 termcolor==1.1.0

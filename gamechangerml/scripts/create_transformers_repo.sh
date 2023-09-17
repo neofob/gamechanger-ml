@@ -30,8 +30,8 @@ function download_transformers() {
   echo "Tar files"
 
   tar -zcvf "${models_dest_dir}/transformers.tar.gz" "${models_dest_dir}/transformers/"
-  echo "uploading to s3 $S3_TRANS_MODEL_PATH"
-  aws s3 cp "$models_dest_dir/transformers.tar.gz" $S3_TRANS_MODEL_PATH
+#  echo "uploading to s3 $S3_TRANS_MODEL_PATH"
+#  aws s3 cp "$models_dest_dir/transformers.tar.gz" $S3_TRANS_MODEL_PATH
 }
 
 while getopts v:p: flag

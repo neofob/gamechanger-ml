@@ -190,11 +190,15 @@ async def post_expand_query_terms(body: dict, response: Response) -> dict:
         or MODELS.query_expander_jbook is None
         else MODELS.query_expander_jbook
     )
+
+    logger.info(f"I got to after query expander");
     try:
         terms_string = unquoted(terms_string)
+        logger.info(f"I got to after setting terms_string");
         expansion_list = query_expander.expand(
             terms_string, **QexpConfig.EXPANSION_ARGS
         )
+        logger.info(f"I got to after setting expansion_list");
         # Pass entire query from frontend to query expansion model and return topn.
         # Removes original word from the return terms unless it is combined with another word
         logger.info(f"original expanded terms: {expansion_list}")
